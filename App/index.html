@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://arcms.w4v.es/Assets/Supreme/stylesheet.css">
+  </head>
+  <body>
+
+    <div class = "window">
+      <app-pages>
+      </app-pages>
+      <div class = "main-icons">
+        <div>
+          <img src = "./Assets/icon-02.svg" />
+          <span>My Power</span>
+        </div>
+        <div>
+          <img src = "./Assets/icon-03.svg" />
+          <span>Insights</span>
+        </div>
+        <div>
+          <img src = "./Assets/icon-04.svg" />
+          <span>Account</span>
+        </div>
+        <div>
+          <img src = "./Assets/icon-05.svg" />
+          <span>Help</span>
+          <div class = "bar-icon">
+            <div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <style>
+    :root {
+      --main-icons-h: 22vw;
+      --main-c: #005db9;
+      font-family: "Supreme LL TT";
+      font-size: 4vw;
+    }
+
+    app-pages {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: var(--main-icons-h);
+    }
+    .main-icons {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: var(--main-icons-h);
+      display: flex;
+      justify-content: space-around;
+      color: var(--main-c);
+      font-size: 0.9em;
+
+    }
+    .main-icons > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .main-icons img {
+      height: 7vw;
+    }
+    .bar-icon {
+      position: relative;
+    }
+    .bar-icon div {
+      position: absolute;
+      left: calc(-0.7 * var(--main-icons-h) / 2);
+      width: calc(0.7 * var(--main-icons-h));
+      border-radius: 7px;
+      top: 20px;
+      bottom: 15px;
+      height: 7px;
+      background: var(--main-c);
+    }
+  </style>
+</html>
