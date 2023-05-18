@@ -67,6 +67,9 @@
             Insights
           </div>
           <div class = "page-margin" style="margin-bottom: 5em;">
+            <div class = "bbl" onclick = "goto('questionare')">
+              <i>Energy Usage Questionare</i>
+            </div>
             <div class = "im1 bbl">
               <div>
                 You are eligible to receive the solar energy for government subsidy. You could have one <i>1kW</i> solar panel installed in your house with zero up front fee's.
@@ -99,22 +102,13 @@
             </div>
           </div>
         </div>
-        <div value = "account">
+
+        <div value = "questionare">
           <div class = "page-head">
-            <img class = "icon" src = "./Assets/icon-04.svg" />
-            My Account
+            <img src = "./Assets/back.svg" class = "icon" onclick = "goto('insights')"/>
+            Questionare
           </div>
           <div class = "page-margin">
-            <h3>Name</h3>
-            <div class = "bbl">
-              <input value = "Andrew Kas"/>
-            </div>
-
-            <h3>Address</h3>
-            <div class = "bbl">
-              <input value = "197 Kent St, Sydney NSW, 2000"/>
-            </div>
-
             <h3>How much is your income?</h3>
             <div class = "bbl">
               <div>Move the slider to select your yearly income.</div>
@@ -146,7 +140,24 @@
               </div>
               <img class = "icon" src = "./Assets/upload.svg" />
             </div>
+          </div>
+        </div>
 
+        <div value = "account">
+          <div class = "page-head">
+            <img class = "icon" src = "./Assets/icon-04.svg" />
+            My Account
+          </div>
+          <div class = "page-margin">
+            <h3>Name</h3>
+            <div class = "bbl">
+              <input value = "Andrew Kas"/>
+            </div>
+
+            <h3>Address</h3>
+            <div class = "bbl">
+              <input value = "197 Kent St, Sydney NSW, 2000"/>
+            </div>
           </div>
         </div>
       </app-pages>
@@ -172,6 +183,10 @@
   </body>
 
   <script>
+  let pages = document.querySelector("app-pages");
+    function goto(pg) {
+      pages.moveTo(pg);
+    }
     function select(el){
       let parent = el.parentNode;
       for (let child of parent.children) {
