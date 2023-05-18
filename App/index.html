@@ -3,86 +3,226 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Draw" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="https://arcms.w4v.es/Assets/Supreme/stylesheet.css">
+    <link rel="stylesheet" href="./app-styles.css">
+    <script type = "module" src = "./device-list.js"></script>
+    <script type = "module" src = "./icon-radio.js"></script>
+    <script type = "module" src = "./splash.js"></script>
+    <script type = "module" src = "./app-pages.js"></script>
   </head>
   <body>
-
+    <splash-screen></splash-screen>
     <div class = "window">
-      <app-pages>
-      </app-pages>
-      <div class = "main-icons">
-        <div>
-          <img src = "./Assets/icon-02.svg" />
-          <span>My Power</span>
+      <app-pages value = "my-power">
+        <div value = "my-power">
+          <div class = "page-head">
+            <img class = "icon" src = "./Assets/icon-02.svg" />
+            My Power
+          </div>
+          <div class = "page-margin">
+            <h3>Total Monthly Power Usage</h3>
+            <div class = "bbl">
+              <img width = "100%" src = "./Assets/graph.svg" />
+            </div>
+            <h3>Realtime Power Usage</h3>
+
+            <device-list>
+
+            </device-list>
+
+          </div>
         </div>
-        <div>
-          <img src = "./Assets/icon-03.svg" />
-          <span>Insights</span>
-        </div>
-        <div>
-          <img src = "./Assets/icon-04.svg" />
-          <span>Account</span>
-        </div>
-        <div>
-          <img src = "./Assets/icon-05.svg" />
-          <span>Help</span>
-          <div class = "bar-icon">
-            <div>
+        <div value = "shop">
+          <div class = "page-head">
+            <img class = "icon" src = "./Assets/icon-05.svg" />
+            Shop
+          </div>
+
+          <div class = "page-margin">
+            <div class = "bbl">
+              <span class = "h1">Power Monitor</span>
+              <img src = "./Assets/device.webp" width = "100%" />
+              <div>
+                <span>Monitor your power usage</span><h5>$34.95</h5>
+              </div>
+            </div>
+            <div class = "bbl">
+              <span class = "h1">Kogan 236L Top Mount Fridge (Dark Graphite)</span>
+              <br />
+              <img src = "./Assets/fridge.png" width = "100%" />
+              <div>
+                <span>Spacious and adaptable for all cold storage, the Kogan 236L Top Mount Fridge is the perfect addition to your kitchen with its sleek dark graphite exterior and precision temperature control.</span>
+                <h5>$539.99</h5>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+        <div class = "insights" value = "insights">
+          <div class = "page-head">
+            <img class = "icon" src = "./Assets/icon-03.svg" />
+            Insights
+          </div>
+          <div class = "page-margin" style="margin-bottom: 5em;">
+            <div class = "im1 bbl">
+              <div>
+                You are eligible to receive the solar energy for government subsidy. You could have one <i>1kW</i> solar panel installed in your house with zero up front fee's.
+                <br />
+                <br />
+                <a>Learn More</a>
+                <span class = "date">
+                  17 Apr 2023
+                </span>
+              </div>
+            </div>
+            <div class = "im1 bbl">
+              <div>
+                We have noticed that you could be saving <i>$58.30</i> a month by switching to an energy efficient refridgerator.
+                <br />
+                <br />
+                <a>Learn More</a>
+                <span class = "date">
+                  17 Apr 2023
+                </span>
+              </div>
+            </div>
+            <div class = "im1 bbl">
+              <div>
+                <img src = "./Assets/pie.svg" style = "float: left; width: 40%;" />
+                The Josh's Room's power outlet has been using a proportionally large Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                <br />
+                <span class = "date">1 May 2023</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div value = "account">
+          <div class = "page-head">
+            <img class = "icon" src = "./Assets/icon-04.svg" />
+            My Account
+          </div>
+          <div class = "page-margin">
+            <h3>Name</h3>
+            <div class = "bbl">
+              <input value = "Andrew Kas"/>
+            </div>
+
+            <h3>Address</h3>
+            <div class = "bbl">
+              <input value = "197 Kent St, Sydney NSW, 2000"/>
+            </div>
+
+            <h3>How much is your income?</h3>
+            <div class = "bbl">
+              <div>Move the slider to select your yearly income.</div>
+              <input type="range" min="1" max="200" value="50" class="slider" id="myRange">
+              <div class = "row rsb">
+                <span>$0</span>
+                <span>$200,000+</span>
+              </div>
+            </div>
+
+            <h3>Do you own your home?</h3>
+            <div class = "row rjc">
+              <button selected onclick = "select(this)">Home owner</button>
+               <button onclick = "select(this)">Renter</button>
+            </div>
+
+            <h3>Who is current electricity provider?</h3>
+            <select name="cars" id="cars">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="audi">Audi</option>
+            </select>
+
+            <h3>Upload your current electricty bill.</h3>
+            <div class = "bbl row rsb" onclick = "loadFile()">
+              <div>
+                aus-grid-invoice-04-2023.pdf
+              </div>
+              <img class = "icon" src = "./Assets/upload.svg" />
+            </div>
+
+          </div>
+        </div>
+      </app-pages>
+      <icon-radio class = "main-icons">
+        <div value = "my-power">
+          <img src = "./Assets/icon-02.svg" />
+          <span>My Power</span>
+        </div>
+        <div value = "shop">
+          <img src = "./Assets/icon-05.svg" />
+          <span>Shop</span>
+        </div>
+        <div value = "insights">
+          <img src = "./Assets/icon-03.svg" />
+          <span>Insights</span>
+        </div>
+        <div value = "account">
+          <img src = "./Assets/icon-04.svg" />
+          <span>Account</span>
+        </div>
+      </icon-radio>
     </div>
   </body>
 
-  <style>
-    :root {
-      --main-icons-h: 22vw;
-      --main-c: #005db9;
-      font-family: "Supreme LL TT";
-      font-size: 4vw;
+  <script>
+    function select(el){
+      let parent = el.parentNode;
+      for (let child of parent.children) {
+        child.toggleAttribute("selected", false)
+      }
+      el.toggleAttribute("selected", true)
+      parent.selected = el;
     }
 
-    app-pages {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: var(--main-icons-h);
+    function loadFile(){
+      console.log("xx");
+      let input = document.createElement("INPUT");
+      input.setAttribute("type", "file");
+      input.click();
+      console.log(input);
     }
-    .main-icons {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: var(--main-icons-h);
-      display: flex;
-      justify-content: space-around;
-      color: var(--main-c);
-      font-size: 0.9em;
+  </script>
 
-    }
-    .main-icons > div {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    .main-icons img {
-      height: 7vw;
-    }
-    .bar-icon {
-      position: relative;
-    }
-    .bar-icon div {
-      position: absolute;
-      left: calc(-0.7 * var(--main-icons-h) / 2);
-      width: calc(0.7 * var(--main-icons-h));
-      border-radius: 7px;
-      top: 20px;
-      bottom: 15px;
-      height: 7px;
-      background: var(--main-c);
-    }
-  </style>
+  <script type = "module">
+      let icons = document.querySelector("icon-radio");
+      let pages = document.querySelector("app-pages");
+      let devices = document.querySelector("device-list");
+      icons.addEventListener("change", async (e) => {
+        e.stop = pages.moving;
+        await pages.moveTo(e.value);
+      })
+
+      console.log(devices);
+      let baseuse = [351, 2e3, 900, 800, 3e3, 500];
+      let dd = [
+        {name: "Kitchen Fridge", usage: 900.12313},
+        {name: "Lounge Room Aircon", usage: 2.1124123e3, on: true},
+        {name: "Family TV", usage: 902.122, on: true},
+        {name: "Computer", usage: 800.122},
+        {name: "Josh's Room Outlet", usage: 3002.122},
+        {name: "Sophie Room Outlet", usage: 500.122},
+      ]
+      devices.devices = dd;
+      devices.render();
+
+      let next = () => {
+        let i = 0;
+        for (let device of dd) {
+          let m = device.on ? 1 : 0;
+          device.usage = m * (baseuse[i] + (Math.random() * 20 - 10));
+          i++;
+        }
+        devices.render();
+        setTimeout(next, 2000)
+      }
+      next();
+
+  </script>
 </html>

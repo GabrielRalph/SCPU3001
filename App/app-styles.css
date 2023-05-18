@@ -1,0 +1,338 @@
+:root {
+  --main-icons-h: 18vw;
+  --main-c: #3b90e4;
+  --main-c-dark: #0a4dba;
+  --bg-c: #ebedf0;
+  --m1: 5vw;
+  --br1: 2vw;
+  --bfs: 4vw;
+  font-family: "Supreme LL TT";
+  font-size: var(--bfs);
+}
+a {
+  color: var(--main-c);
+  text-decoration: underline;
+}
+i{
+  color: var(--main-c-dark);
+  font-style: normal;
+  /* font-weight: bold; */
+}
+body {
+  background: var(--bg-c);
+}
+splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: block;
+}
+splash-screen > div {
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+splash-screen h1 {color: white;}
+app-pages {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: var(--main-icons-h);
+}
+.insights {
+}
+.h1 {font-size: 1.2em; font-weight: bold;}
+.bbl, .device{
+  background: white;
+  border-radius: var(--br1);
+  padding: 0.5em;
+  box-shadow: 1px 1px 2px #bbb;
+  margin-bottom: var(--m1);
+}
+
+.msg-input {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 5vw;
+  gap: 2.5vw;
+}
+.msg-input textarea {
+  width: 100%;
+  resize: none;
+  outline: none;
+  border: 2px solid var(--main-c);
+  border-radius: 2vw;
+}
+
+.im1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  margin-bottom: 1em;
+}
+.date {
+  white-space: nowrap;
+  font-size: 0.8em;
+  float: right;
+}
+.im1 > *:nth-child(2) {
+  white-space: nowrap;
+  font-size: 0.8em;
+  text-align: right;
+}
+
+.main-icons {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: calc(var(--main-icons-h) - 0.5em);
+  display: flex;
+  justify-content: space-around;
+  color: var(--main-c);
+  font-size: 0.9em;
+  padding-bottom: 0.5em;
+  z-index: 10;
+  box-shadow: 0 0 3px #d9dde0;
+  background: white;
+}
+.main-icons > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2vw;
+}
+.main-icons img {
+  height: 7vw;
+}
+.bar-icon {
+  position: relative;
+}
+.bar-icon div {
+  position: absolute;
+  left: calc(-0.7 * var(--main-icons-h) / 2);
+  width: calc(0.7 * var(--main-icons-h));
+  border-radius: 7px;
+  top: 2vw;
+  bottom: 15px;
+  height: 1vw;
+  background: var(--main-c);
+}
+app-pages > div > * {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+.page-margin {
+  margin: 0 var(--m1);
+  margin-bottom: var(--m1);
+}
+
+
+
+device-list {
+  display: block;
+  width: 100%;
+}
+.device {
+  width: calc(100% - 1em);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.3em 0;
+  gap: 0.5em;
+
+}
+.device > div:nth-child(2) {
+  width: 90%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.device > div:nth-child(3) {
+  display: flex;
+}
+.device > div:nth-child(3)[selected] {
+  display: flex;
+  align-items: flex-end;
+}
+.device > *:not([selected]) b {
+  opacity: 0.5;
+}
+
+.device b {
+  margin-right: 0.2em;
+}
+.device em {
+  font-weight: bold;
+  font-style: normal;
+  /* margin:0 0.5em; */
+  font-size: 0.9em;
+}
+.device em::before {
+  content: "Usage: ";
+}
+
+.switch{
+  border: 2px solid var(--main-c);
+  width: 14px;
+  border-radius: 10px;
+  height: 30px;
+  position: relative;
+  transition: 0.3s ease-in;
+}
+
+.switch[selected] div{
+  background: var(--main-c);
+  bottom: 0;
+}
+.switch:not([selected]) div{
+  top: 0;
+}
+.switch div {
+  transition: 0.3s ease-in;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 10px;
+  border: 2px solid var(--main-c);
+  margin: 1px;
+}
+
+
+h5 {
+  margin: 0;
+    float: right;
+    color: var(--main-c);
+}
+
+.page-head {
+  /* border-bottom: 2px solid var(--main-c); */
+  font-size: 1.7em;
+  padding: 0.5em;
+  color: var(--main-c);
+  display: flex;
+  align-items: center;
+  /* color: white; */
+  text-align: left;
+}
+.page-head .icon {
+  margin-right: 0.3em;
+}
+
+.icon-circle {
+  font-size: 1.3em;
+  width: 1.2em;
+  height: 1.2em;
+  border: 2px solid var(--main-c);
+  border-radius: 2em;
+  text-align: center;
+  line-height: 1.2em;
+  color: var(--main-c);
+}
+
+
+.icon, .icon svg{
+  height: 1.3em;
+}
+
+
+.container {
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h3:first-of-type {
+  margin-top: 0;
+}
+h1 {
+  text-align: left;
+  color: #333;
+  margin-top: 0;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  display: inline-block;
+  border: none;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 5px; /* Specified height */
+  background: var(--main-c);
+  border-radius: 20px;
+  outline: none; /* Remove outline */
+}
+
+.row {display: flex; gap: var(--m1);}
+.rsb {justify-content: space-between;}
+.rjc {    justify-content: center;}
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-moz-range-thumb, .slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 20px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  background: var(--main-c); /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 20px;
+}
+
+input {
+  width: 90%;
+  outline: none;
+  font: inherit;
+  border: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+select {
+  background: white;
+}
+
+select, button {
+  width: 100%;
+  padding: 0.5em;
+  border-radius: var(--br1);
+  background-color: white;
+  color: black;
+  font-size: var(--bfs);
+}
+
+
+button[selected] {
+  border: 2px solid var(--main-c);
+  padding: calc(0.5em - 4px);
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+  }
+}
